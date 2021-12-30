@@ -1,0 +1,33 @@
+{
+  "name": "cypress-wait-for-stable-dom",
+  "version": "0.0.1",
+  "description": "Cypress command to wait until DOM has finished changing",
+  "main": "src",
+  "types": "src",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "cypress run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/narinluangrath/cypress-wait-for-stable-dom.git"
+  },
+  "keywords": [
+    "cypress",
+    "cypress-custom-command",
+    "cypress-wait-for-stable-dom"
+  ],
+  "author": "Narin Luangrath <narin.luangrath@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/narinluangrath/cypress-wait-for-stable-dom/issues"
+  },
+  "homepage": "https://github.com/narinluangrath/cypress-wait-for-stable-dom#readme",
+  "devDependencies": {
+    "cypress": "^9.2.0"
+  }
+}
