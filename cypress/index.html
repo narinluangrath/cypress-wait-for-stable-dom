@@ -1,3 +1,43 @@
 <body>
-  <!-- TODO -->
+  <div id="1" style="border: 5px solid black;">One</div>
+  <div id="2" style="border: 5px solid black;">Two</div>
+  <script>
+    // Append <p>Loading...</p> to div#1 every second, for 10 seconds
+    // Then append <p>Done 1!</p>
+    let count1 = 0;
+    const id1 = setInterval(() => {
+      if (count1 < 10) {
+        const p = document.createElement('p');
+        const t = document.createTextNode('Loading...');
+        p.appendChild(t);
+        document.getElementById("1").appendChild(p);
+        count1++;
+      } else {
+        const p = document.createElement('p');
+        const t = document.createTextNode('Done 1!');
+        p.appendChild(t);
+        document.getElementById("1").appendChild(p);
+        clearInterval(id1);
+      }
+    }, 1000)
+
+    // Append <p>Loading...</p> to div#2 every second, for 3 seconds
+    // Then append <p>Done 2!</p>
+    let count2 = 0;
+    const id2 = setInterval(() => {
+      if (count2 < 3) {
+        const p = document.createElement('p');
+        const t = document.createTextNode('Loading...');
+        p.appendChild(t);
+        document.getElementById("2").appendChild(p);
+        count2++;
+      } else {
+        const p = document.createElement('p');
+        const t = document.createTextNode('Done 2!');
+        p.appendChild(t);
+        document.getElementById("2").appendChild(p);
+        clearInterval(id2);
+      }
+    }, 1000)
+  </script>
 </body>
