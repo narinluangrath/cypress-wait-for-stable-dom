@@ -2,9 +2,13 @@
 
 > Wait until DOM is stable before continuing with test. Useful for visual regression testing.
 
-![](./demo.mp4)
 
-Internally, uses [Mutation Observer] to detect DOM changes.
+
+https://user-images.githubusercontent.com/13155517/147802185-2371a02c-a96c-4000-92d6-08c9fb0d2b90.mp4
+
+
+
+Uses [Mutation Observer] to detect DOM changes.
 
 This repo was bootstraped from [bahmutov/cypress-get-by-label] and has logic based on the same author's (Gleb Bahmutov) [article].
 ## Install
