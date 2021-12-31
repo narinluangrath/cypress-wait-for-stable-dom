@@ -73,7 +73,7 @@ To get IntelliSense working with the custom command `cy.waitForStableDOM` includ
 
 [Mutation Observer]: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 [bahmutov/cypress-get-by-label]: https://github.com/bahmutov/cypress-get-by-label
-[author]: https://glebbahmutov.com/blog/cypress-recurse
+[article]: https://glebbahmutov.com/blog/cypress-recurse
 [parent command]: https://docs.cypress.io/api/cypress-api/custom-commands#Parent-Commands
 [child command]: https://docs.cypress.io/api/cypress-api/custom-commands#Child-Commands
 [options]: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe#parameters
