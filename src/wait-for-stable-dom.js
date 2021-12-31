@@ -23,7 +23,7 @@ export const waitForStableDOM = (subject, userOptions, iteration = 0) => {
       
       cy.wait(options.pollInterval, { log: false }).then(() => {
         if (!mutation) {
-          cy.log(`No changes detected for pollInterval ${options.pollInterval}!`);
+          cy.log(`No changes detected for over interval ${options.pollInterval}ms!`);
           cy.log('Continuing with test...');
           return cy.wrap(target);
         } else if ((iteration * options.pollInterval) < options.timeout) {

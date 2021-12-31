@@ -2,9 +2,11 @@
 
 > Wait until DOM is stable before continuing with test. Useful for visual regression testing.
 
+![](./demo.mp4)
+
 Internally, uses [Mutation Observer] to detect DOM changes.
 
-This repo was bootstraped from [bahmutov/cypress-get-by-label].
+This repo was bootstraped from [bahmutov/cypress-get-by-label] and has logic based on the same author's (Gleb Bahmutov) [article].
 ## Install
 
 ```
@@ -42,6 +44,21 @@ cy.get('#myDomElement')
   .waitForStableDOM({ pollInterval: 1000, timeout: 10000 })
 ```
 
+If you'd like to customize the [options] passed to mutation observer, you can provide an optional second argument.
+
+```js
+const options = {
+  // Only listen to CSS changes
+  attributeFilter: [ "style", "class" ],
+  subtree: true,
+  childList: true,
+  attributes: true,
+  attributeOldValue: true,
+}
+
+cy.waitForStableDOM({ pollInterval: 1000, timeout: 10000 }, options)
+```
+
 ## Types
 
 To get IntelliSense working with the custom command `cy.waitForStableDOM` include in your specs
@@ -52,5 +69,7 @@ To get IntelliSense working with the custom command `cy.waitForStableDOM` includ
 
 [Mutation Observer]: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 [bahmutov/cypress-get-by-label]: https://github.com/bahmutov/cypress-get-by-label
+[author]: https://glebbahmutov.com/blog/cypress-recurse
 [parent command]: https://docs.cypress.io/api/cypress-api/custom-commands#Parent-Commands
 [child command]: https://docs.cypress.io/api/cypress-api/custom-commands#Child-Commands
+[options]: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe#parameters
