@@ -11,7 +11,7 @@ const defaultOptions = {
   },
 };
 
-export const waitForStableDOM = (subject, userOptions, iteration = 0) => {
+const waitForStableDOM = (subject, userOptions, iteration = 0) => {
   const options = Object.assign({}, defaultOptions, userOptions);
   
   cy.document()
@@ -35,3 +35,5 @@ export const waitForStableDOM = (subject, userOptions, iteration = 0) => {
       });
     });
 }
+
+module.exports = { waitForStableDOM };
