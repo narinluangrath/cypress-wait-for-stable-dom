@@ -18,3 +18,7 @@ declare namespace Cypress {
     waitForStableDOM(commandOptions, mutationOptions): Chainable<JQuery<HTMLElement>>
   }
 }
+
+declare module "cypress-wait-for-stable-dom" {
+ export var registerCommand: () => void;
+}
