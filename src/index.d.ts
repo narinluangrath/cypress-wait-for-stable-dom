@@ -16,6 +16,13 @@ declare namespace Cypress {
      * @param mutationOptions.characterDataOldValue {boolean}
      */
     waitForStableDOM(commandOptions, mutationOptions): Chainable<JQuery<HTMLElement>>
+    
+    /**
+     * @param commandOptions {Object} Options to customize the retry logic
+     * @param commandOptions.pollInterval {number} Time to pass with no DOM changes before continuing
+     * @param commandOptions.timeout {number} Time to pass before exiting with an error
+     */
+    waitForStableDOM(commandOptions): Chainable<JQuery<HTMLElement>>;
   }
 }
 
