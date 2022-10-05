@@ -1,6 +1,6 @@
 # cypress-wait-for-stable-dom
 
-> Wait until DOM is stable before continuing with test. Useful for visual regression testing.
+> Wait until the DOM is stable before continuing with test. Useful for visual regression testing.
 
 
 
@@ -48,10 +48,10 @@ cy.get('#myDomElement')
   .waitForStableDOM({ pollInterval: 1000, timeout: 10000 })
 ```
 
-If you'd like to customize the [options] passed to mutation observer, you can provide an optional second argument.
+If you'd like to customize the [options] passed to mutation observer, you can provide an optional `mutationObserver` property.
 
 ```js
-const options = {
+const mutationObserver = {
   // Only listen to CSS changes
   attributeFilter: [ "style", "class" ],
   subtree: true,
@@ -60,7 +60,24 @@ const options = {
   attributeOldValue: true,
 }
 
-cy.waitForStableDOM({ pollInterval: 1000, timeout: 10000 }, options)
+cy.waitForStableDOM({ pollInterval: 1000, timeout: 10000, mutationObserver })
+```
+
+The argument you provide to `cy.waitForStableDOM` will be deep merged with the following default object
+
+```js
+const defaultOptions = {
+  pollInterval: 1000,
+  timeout: 10000,
+  mutationObserver: {
+    subtree: true,
+    childList: true,
+    attributes: true,
+    attributeOldValue: true,
+    characterData: true,
+    characterDataOldValue: true,
+  },
+};
 ```
 
 ## Types

@@ -1,5 +1,5 @@
 const defaultOptions = {
-  pollInterval: 1000, 
+  pollInterval: 1000,
   timeout: 10000,
   mutationObserver: {
     subtree: true,
@@ -11,8 +11,22 @@ const defaultOptions = {
   },
 };
 
-const waitForStableDOM = (subject, userOptions, iteration = 0) => {
-  const options = Object.assign({}, defaultOptions, userOptions);
+const waitForStableDOM = (subject, userOptions = {}, iteration = 0) => {
+  const mutationOptions = Object.assign(
+    {},
+    defaultOptions.mutationObserver,
+    userOptions && userOptions.mutationObserver
+  )
+
+  const options = Object.assign(
+    {},
+    defaultOptions,
+    Object.assign(
+      {},
+      userOptions,
+      { mutationObserver: mutationOptions }
+    )
+  );
   
   cy.document()
     .then(document => {
