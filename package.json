@@ -1,6 +1,6 @@
 {
   "name": "cypress-wait-for-stable-dom",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Cypress command to wait until DOM has finished changing",
   "main": "src",
   "types": "src",
