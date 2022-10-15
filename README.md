@@ -80,6 +80,16 @@ const defaultOptions = {
 };
 ```
 
+You can change what the default object is by specifying it as the argument to `registerCommand`
+
+```js
+const { registerCommand } = require('cypress-wait-for-stable-dom')
+registerCommand({ pollInterval: 300, timeout: 2000 })
+
+// or
+import { registerCommand } from 'cypress-wait-for-stable-dom'
+registerCommand({ pollInterval: 300, timeout: 2000 })
+```
 ## Types
 
 To get IntelliSense working with the custom command `cy.waitForStableDOM` include in your specs

@@ -1,10 +1,10 @@
-const { waitForStableDOM } = require('./wait-for-stable-dom')
+const { getWaitForStableDOM } = require('./wait-for-stable-dom')
 
-const registerCommand = () => {
+const registerCommand = (userDefaultOptions = {}) => {
   Cypress.Commands.add(
     'waitForStableDOM',
     { prevSubject: 'optional' },
-    waitForStableDOM
+    getWaitForStableDOM(userDefaultOptions)
   )
 }
 
