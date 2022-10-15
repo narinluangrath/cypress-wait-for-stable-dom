@@ -12,21 +12,14 @@ const defaultOptions = {
 };
 
 const waitForStableDOM = (subject, userOptions = {}, iteration = 0) => {
-  const mutationOptions = Object.assign(
-    {},
-    defaultOptions.mutationObserver,
-    userOptions && userOptions.mutationObserver
-  )
-
-  const options = Object.assign(
-    {},
-    defaultOptions,
-    Object.assign(
-      {},
-      userOptions,
-      { mutationObserver: mutationOptions }
-    )
-  );
+  const options = {
+    ...defaultOptions,
+    ...userOptions,
+    mutationObserver: {
+      ...defaultOptions.mutationObserver,
+      ...userOptions.mutationObserver
+    }
+  }
   
   cy.document()
     .then(document => {
